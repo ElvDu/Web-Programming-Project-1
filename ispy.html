@@ -1,43 +1,117 @@
 ﻿<!DOCTYPE html>
 <head>
 	<style>
+
   label {
-    color: white;
-    font-size: 1.5em;
+    /*color: transparent;*/
+    font-size: 2em;
+    color: transparent;
+  }
+
+  #logo {
+  	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  }
+
+  p, ul{
+  	text-align: center;
+  	list-style-type: none;
   }
   
 	/* Change div to element in list */
 	input[type=checkbox]:checked + label {
+		font-weight: bold;
 	  color: red;
-		text-decoration: line-through;
+
 	}
 
   input[type=checkbox] {
      position: absolute;
+     
+    display: none;
      top: -9999px;
      left: -9999px;
   }
   
- .one {
+ .A {
     position: absolute;
-    top: 150px;
-    right: 150px;
+    top: 850px;
+    left: 560px;
+  }
+  .B {
+  	position: absolute;
+    top: 1100px;
+    left: 800px;
+  }
+  .C {
+  	position: absolute;
+    top: 750px;
+    left: 1120px;
+  }
+  .D {
+  	position: absolute;
+    top: 840px;
+    left: 410px;
+  }
+  .E {
+  	position: absolute;
+    top: 950px;
+    left: 340px;
+  }
+  .F_1 {
+  	position: absolute;
+    top: 710px;
+    left: 360px;
+  }
+  .F_2 {
+  	position: absolute;
+    top: 880px;
+    left: 940px;
+  }
+  .G {
+  	position: absolute;
+    top: 1220px;
+    left: 350px;
+  }
+  .H {
+  	position: absolute;
+    top: 1030px;
+    left: 670px;
   }
 	</style>
 	</head>
 <body>
+	<div class="banner">
+		<img src="ispy_logo.png" id="logo">
+	</div>
 	<p>Make sure the window is maximized! Once you find the object, click on it to mark it found!</p>
+
+	<ul>
+		<li>A. A tiny R (1 item)</li>
+		<li>B. Five yellow balls, all together (1 item)</li>
+		<li>C. 37 (1 item)</li>
+		<li>D. 12 white on black (1 item)</li>
+		<li>E. Rubix snake (1 item)</li>
+		<li>F. Two little piggies (2 items)</li>
+		<li>G. Three red diamonds (1 item)</li>
+		<li>H. "OE" on a jigsaw (1 item)</li>
+	</ul>
   
-	<input type="checkbox" id="box1"><label for="box1" class="one">1</label>
-	<input type="checkbox" id="box2"><label for="box2">2</label>
-	<input type="checkbox" id="box3"><label for="box3">3</label>
-	<input type="checkbox" id="box4"><label for="box4">4</label>
-	<input type="checkbox" id="box5"><label for="box5">5</label>
-	<input type="checkbox" id="box6"><label for="box6">6</label>
-	<input type="checkbox" id="box7"><label for="box7">7</label>
-	<input type="checkbox" id="box8"><label for="box8">8</label>
+	<input type="checkbox" id="box1"><label for="box1" class="A">A</label>
+	<input type="checkbox" id="box2"><label for="box2" class="B">B</label>
+	<input type="checkbox" id="box3"><label for="box3" class="C">C</label>
+	<input type="checkbox" id="box4"><label for="box4" class="D">D</label>
+	<input type="checkbox" id="box5"><label for="box5" class="E">E</label>
+	<input type="checkbox" id="box6_1"><label for="box6_1" class="F_1">F.1</label>
+	<input type="checkbox" id="box6_2"><label for="box6_2" class="F_2">F.2</label>
+	<input type="checkbox" id="box7"><label for="box7" class="G">G</label>
+	<input type="checkbox" id="box8"><label for="box8" class="H">H</label>
 
-	<img src="ispy_resize.jpg">
+	<img src="ispy_resize.jpg" id="ispy">
 
-
+	<form action="">
+		<input type="submit" value="Next Page"/>
+	</form>
 </body>
