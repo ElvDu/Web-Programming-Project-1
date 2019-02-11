@@ -8,10 +8,10 @@ body{
 user-select: none;
   overflow:hidden;
 }
-/*hide checkbox*/
+/*hide checkbox*//*
 input{position:fixed; left:-10px; top:-10px;}
-
-h1, .score{margin:0; text-align:center; font-size:24px;}
+*/
+h1, .score {margin:0; text-align:center; font-size:24px;}
 
 /*play area*/
 .wrapper{  
@@ -20,64 +20,71 @@ h1, .score{margin:0; text-align:center; font-size:24px;}
   position:relative;
   cursor:crosshair;
 }
-/*count dead birds*/
+/*count clicked fish*/
 .input-circle:checked{
   counter-increment:fish;
 }
-/*print to screen dead birds*/
+/*print to screen clicked fish*/
 .score:after{
-  content: " " counter(animals) " Fish";
+  content: " " counter(fish) " Fish";
 }
 
-.input-circle ~ .fish{
-  opacity:0;
+.input-circle ~ .fish1, .fish2{
+  opacity:1;
   transition:5s  ;
   animation: move 15s infinite alternate;
 }
 
-.input-circle1:not(:checked) ~ .fish
+.input-circle1:not(:checked) ~ .fish1, 
+.input-circle2:not(:checked) ~ .fish2
 {
   opacity:1; 
 }
 
-.input-circle1:checked ~ .fish span
+.input-circle1:checked ~ .fish1 span,
+.input-circle2:checked ~ .fish2 span
 {
   display:block;
 }
 
-.fish{   
+.fish1, .fish2{   
   position:absolute;
   left:40%;  
   cursor:crosshair;
 }
 
-.fish>span{
+.fish1>span{
   display:none;position:absolute; z-index:2; left:-250%;bottom:-50%;  
   background-color:white; border:solid 2px #000; width:200px; height:100px; padding:10px; border-radius:10%;
 }
-.fish>span:before{
+.fish1>span{
    content:"I'm a fish! Learn more about me later!"; color:black; font-size:18px; font-weight:bold;
 }
 
-.fish{bottom:50px;
+.fish1 {bottom:100px;
   animation-delay: -2s!important;
   transform:scale(0.9);
 }
 
+.fish2 {bottom:10px;
+  animation-delay: -4s!important;
+  transform:scale(0.8);
+}
+
 @keyframes move{
-0%{left:0%;}
-20%{left:20%; }
+0%{left:10%;}
+20%{left:40%; }
 40%{left:30%;}
 60%{left:80%;}
 80%{left:60%;}
-100%{left:30%; }
+100%{left:50%; }
 }
 
 /* Game Over screen - THIS IS WHERE YOU CHANGE GAME TIMER */
 
 .gameover{
   position:fixed; z-index:100000; left:0; top:0; bottom:0; right:0; background-color:rgba(0,0,0,0.8);
-  animation:gameover 10s linear forwards;
+  animation:gameover 30s linear forwards;
   font-size:64px; color:white; font-weight:bold; text-align:center; 
   text-indent:0;  
   line-height:500px;
