@@ -1,0 +1,149 @@
+body{
+  counter-reset:animals;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+  overflow:hidden;
+}
+/*hide checkbox*/
+input{position:fixed; left:-10px; top:-10px;}
+h1{margin:0; text-align:center;}
+
+/*play area*/
+.wrapper{  
+  height:500px;
+  background: -webkit-linear-gradient(top, hsla(210,70%,80%,1) 0%,hsla(210,50%,100%,1) 100%);
+  position:relative;
+  cursor:pointer;
+}
+/*count dead */
+.input-circle:checked{
+  counter-increment:animals;
+}
+
+.sum{position:fixed; left:45%; top:60px; font-size:24px; font-weight:bold;}
+
+/*print to screen dead birds*/
+.sum:after{
+  content: counter(animals);
+}
+
+/* Controls input circle movement */
+.input-circle ~ .fish{
+  opacity:0;
+  transition:3s  cubic-bezier(0,.43,1,0);
+  animation: move 10s infinite alternate;
+}
+.input-circle1:not(:checked) ~ .fish1
+/* .input-circle2:not(:checked) ~ .pajaro2,
+.input-circle3:not(:checked) ~ .pajaro3,
+.input-circle4:not(:checked) ~ .pajaro4,
+.input-circle5:not(:checked) ~ .pajaro5,
+.input-circle6:not(:checked) ~ .pajaro6 */
+{
+  opacity:1; 
+}
+
+
+.input-circle1:checked ~ .fish1 span
+/* .input-circle2:checked ~ .pajaro2 span,
+.input-circle3:checked ~ .pajaro3 span,
+.input-circle4:checked ~ .pajaro4 span,
+.input-circle5:checked ~ .pajaro5 span,
+.input-circle6:checked ~ .pajaro6 span */
+{
+  display:block;
+  
+}
+
+.fish{   
+  position:absolute;
+  left:0;  
+  cursor:pointer;
+}
+.fish>span{
+  display:none;position:absolute; z-index:2; left:-250%;bottom:-50%;  
+  background-color:white; border:solid 2px #000; width:300px; height:100px; padding:10px; border-radius:10%;
+}
+.fish>span:before{
+  content:"I'm a fish! Learn more about me later!"; color:black; font-size:18px; font-weight:bold;
+}
+
+.fish1{top:50px;
+  animation-delay: -2s!important;
+  transform:scale(0.9);
+}
+/* .pajaro2{
+  top:100px;
+  animation-delay: -4s!important;
+  transform:scale(0.5); 
+}
+.pajaro3{
+  top:200px;
+  animation-delay: -3s!important;
+  transform:scale(1.4); 
+}
+
+.pajaro4{top:50px;
+  animation-delay: -12s!important;
+  transform:scale(0.9);
+}
+.pajaro5{
+  top:100px;
+  animation-delay: -16s!important;
+  transform:scale(0.5); 
+}
+.pajaro6{
+  top:200px;
+  animation-delay: -20s!important;
+  transform:scale(1.4); 
+} */
+
+@keyframes move{
+0%{left:0%;}
+20%{left:20%;top:50%; }
+40%{top:30%; left:60%;}
+60%{top:80%;left:80%;}
+80%{top:10%; left:20%:}
+100%{top:30%; left:20%; }
+}
+
+
+.gameover{
+  position:fixed; z-index:100000; left:0; top:0; bottom:0; right:0; background-color:rgba(0,0,0,0.8);
+  animation:gameover 30s linear forwards;
+  font-size:64px; color:white; font-weight:bold; text-align:center; 
+  text-indent:0;  
+  line-height:500px;
+}
+
+@keyframes gameover{
+0%{left:-5000px;bottom:100%;}
+97%{left:-5000px;bottom:100%;}
+100%{ left:0px;}
+}
+
+/* Fish stuff */
+
+body {
+  overflow: hidden;
+}
+img {max-width: 100%;}
+
+.striper .fish {
+  width: 200px;
+  position: absolute;  
+  left: 50%;
+  margin-left: -100px;
+  bottom: 40px;
+}
+.swim .fish{
+  -webkit-animation-name: swim;
+  -webkit-animation-duration: 3s;
+}
+@-webkit-keyframes swim {
+  from {-webkit-transform: translate(200%, 0)}
+  to {-webkit-transform: translate(-200%, 0)}
+}
