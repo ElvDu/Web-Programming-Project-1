@@ -15,8 +15,10 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 
 /*play area*/
 .wrapper{  
-  height:500px;
-  background: -webkit-linear-gradient(top, hsla(210,70%,80%,1) 0%,hsla(210,50%,100%,1) 100%);
+  height:720px;
+  /*background: -webkit-linear-gradient(top, hsla(210,70%,80%,1) 0%,hsla(210,50%,100%,1) 100%);
+  */
+  background-image:url("reef.jpg");
   position:relative;
   cursor:crosshair;
 }
@@ -33,39 +35,89 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 
 /* Change time after 'move' for fish speed */
 
-.input-circle ~ .fish1, .fish2{
+.input-circle ~ .fish2,.fish6{
   opacity:0;
-  transition:5s;
-  animation: move 5s infinite alternate;
+  transition:10s;
+  animation: move-right 10s infinite alternate;
+}
+.input-circle ~ .fish1,.fish5{
+	opacity:0;
+	transition:10s;
+	animation:move-left 10s infinite alternate;
+}
+.input-circle ~ .fish3,.fish4,.fish7{
+	opacity:0;
+	transition:20s;
+	animation: move-octopus 20s infinite normal;
 }
 
 /* For each new fish add a new input-circle# and the appropriate class name */
 
 .input-circle1:not(:checked) ~ .fish1, 
-.input-circle2:not(:checked) ~ .fish2
+.input-circle2:not(:checked) ~ .fish2,
+.input-circle3:not(:checked) ~ .fish3,
+.input-circle4:not(:checked) ~ .fish4,
+.input-circle5:not(:checked) ~ .fish5,
+.input-circle6:not(:checked) ~ .fish6,
+.input-circle7:not(:checked) ~ .fish7
 {
   opacity:1; 
 }
 
 .input-circle1:checked ~ .fish1 span,
-.input-circle2:checked ~ .fish2 span
+.input-circle2:checked ~ .fish2 span,
+.input-circle3:checked ~ .fish3 span,
+.input-circle4:checked ~ .fish4 span,
+.input-circle5:checked ~ .fish5 span,
+.input-circle6:checked ~ .fish6 span,
+.input-circle7:checked ~ .fish7 span
 {
   display:block;
 }
 
 /* Not sure how but this controls movement. Don't mess with it too much */
+/* This kind of determines how far the object will travel overall - Elven */
 
-.fish1, .fish2{   
+.fish1{   
+  position:absolute;
+  right:40%;  
+  cursor:crosshair;
+}
+.fish2{   
   position:absolute;
   left:40%;  
   cursor:crosshair;
 }
-
+.fish3{
+	position:absolute;
+	right:200%;
+	cursor:crosshair;
+}
+.fish4{
+	position:absolute;
+	right:50%;
+	cursor:crosshair;
+}
+.fish5{
+	position:absolute;
+	left:100%;
+	cursor:crosshair;
+}
+.fish6{
+	position:absolute;
+	right:80%;
+	cursor:crosshair;
+}
+.fish7{
+	position:absolute;
+	right:150%;
+	cursor:crosshair;
+}
 /* Formatting for text box */
 
-.fish1>span, .fish2>span{
+.fish1>span, .fish2>span, .fish3>span, .fish4>span, .fish5>span, .fish6>span, .fish7>span{
   display:none;position:relative; z-index:2; left: 0%;bottom:-15%;  
-  background-color:white; border:solid 2px #000; width:200px; height:20px; padding:10px; border-radius:10%;
+  background-color:white; border:solid 2px #000; width:200px; height:60px; padding:10px; border-radius:10%;
 }
 
 /* Dialog */
@@ -76,6 +128,21 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 .fish2>span:before{
    content:"Clown fish?"; color:black; font-size:18px; font-weight:bold;
 }
+.fish3>span:before{
+	content:"I am an octopus! Octopuses have three hearts!"; color:black;font-size:18px;font-weight:bold;
+}
+.fish4>span:before{
+	content:"I am a crab. Behind this tough shell is a deep, complex, and squishy interior."; color:black;font-size:18px;font-weight:bold;
+}
+.fish5>span:before{
+	content:"rawrXD"; color:black;font-size:18px;font-weight:bold;
+}
+.fish6>span:before{
+	content:"Forgive me"; color:black;font-size:18px;font-weight:bold;
+}
+.fish7>span:before{
+	content:"..."; color:black;font-size:18px;font-weight:bold;
+}
 
 /* Combined with movement pattern, use delay/transform to create randomness */
 
@@ -84,27 +151,69 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
   transform:scale(0.9);
 }
 
-.fish2 {bottom:10px;
+.fish2 {bottom:20px;
   animation-delay: -4s!important;
   transform:scale(0.8);
 }
 
-/* Movement pattern */
+.fish3 {bottom:1px;
+	animation-delay: -0.1s!important;
+	transform:scale(0.7);
+}
+.fish4 {bottom:10px;
+	animation-delay: -8s!important;
+	transform:scale(0.5);
+}
+.fish5 {bottom:40px;
+	animation-delay: -10s!important;
+	transform:scale(2);
+}
+.fish6 {bottom:200px;
+	animation-delay: -12s!important;
+	transform:scale(0.6);
+}
+.fish7 {bottom:2px;
+	animation-delay: -14s!important;
+	transform:scale(0.1);
+}
 
-@keyframes move{
-0%{left:10%;}
-20%{left:40%; }
-40%{left:30%;}
-60%{left:80%;}
-80%{left:60%;}
-100%{left:50%; }
+/* Movement pattern */
+/*Top and bottom are the opposite of what you'd expect*/
+@keyframes move-right{
+0%{left:10%;top:60%;}
+20%{left:30%;}
+40%{left:50%;}
+60%{left:70%;top:70%;}
+80%{left:90%;}
+100%{left:110%;top:40%;}
+}
+@keyframes move-left{
+	0%{right:10%;top:30%;}
+	20%{right:30%;}
+	40%{right:50%;}
+	60%{right:70%;top:40%;}
+	80%{right:90%;}
+	100%{right:110%;top:30%;}
+}
+@keyframes move-octopus{
+	0%{left:-10%;}
+	10%{left:10%;}
+	20%{left:20%;}
+	30%{left:40%;}
+	40%{left:50%;}
+	50%{left:70%;}
+	60%{left:80%;}
+	70%{left:100%;}
+	80%{left:110%;}
+	90%{left:130%;}
+	100%{left:150%;}
 }
 
 /* Game Over screen - THIS IS WHERE YOU CHANGE GAME TIMER 'after gameover' */
 
 .gameover{
   position:fixed; z-index:100000; left:0; top:0; bottom:0; right:0; background-color:rgba(0,0,0,0.8);
-  animation:gameover 30s linear forwards;
+  animation:gameover 300s linear forwards;
   font-size:64px; color:white; font-weight:bold; text-align:center; 
   text-indent:0;  
   line-height:500px;
