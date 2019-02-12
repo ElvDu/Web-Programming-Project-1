@@ -37,22 +37,26 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 .input-circle ~ .fish2,.fish6, .fish9{
   opacity:0;
   transition:10s;
+  -webkit-animation: move-right 10s infinite alternate;
   animation: move-right 10s infinite alternate;
 }
 .input-circle ~ .fish1,.fish5{
 	opacity:0;
 	transition:10s;
+	-webkit-animation:move-left 10s infinite alternate;
 	animation:move-left 10s infinite alternate;
 }
 .input-circle ~ .fish3,.fish4,.fish7{
 	opacity:0;
 	transition:20s;
+	-webkit-animation: move-octopus 20s infinite normal;
 	animation: move-octopus 20s infinite normal;
 }
 
 .input-circle ~ .fish8, .fish10{
 	opacity:0;
 	transition: 5s;
+	-webkit-animation:back-and-forth 15s infinite normal;
 	animation:back-and-forth 15s infinite normal;
 }
 
@@ -266,6 +270,46 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 	100%{left:150%;}
 }
 
+/* For Safari browser compatability */
+
+@-webkit-keyframes back-and-forth{
+	0%{right:10%;}
+	20%{right:30%;}
+	40%{right:50%;}
+	60%{right: t:70%;}
+	80%{right:90%;}
+	100%{right:110%}
+}
+
+@-webkit-keyframes move-right{
+	0%{left:10%;top:60%;}
+	20%{left:30%;}
+	40%{left:50%;}
+	60%{left:70%;top:70%;}
+	80%{left:90%;}
+	100%{left:110%;top:40%;}
+}
+@-webkit-keyframes move-left{
+	0%{right:10%;top:30%;}
+	20%{right:30%;}
+	40%{right:50%;}
+	60%{right:70%;top:40%;}
+	80%{right:90%;}
+	100%{right:110%;top:30%;}
+}
+@-webkit-keyframes move-octopus{
+	0%{left:-10%;}
+	10%{left:10%;}
+	20%{left:20%;}
+	30%{left:40%;}
+	40%{left:50%;}
+	50%{left:70%;}
+	60%{left:80%;}
+	70%{left:100%;}
+	80%{left:110%;}
+	90%{left:130%;}
+	100%{left:150%;}
+}
 
 /* Game Over screen - THIS IS WHERE YOU CHANGE GAME TIMER 'after gameover' */
 
