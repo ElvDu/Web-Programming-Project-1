@@ -1,5 +1,5 @@
 body{
-	background-image:url("reef.jpg");
+	background-image:url("./Fishy Pics/reef.jpg");
   background-size:cover;
   counter-reset:fish;
   -webkit-touch-callout: none;
@@ -165,16 +165,16 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 	content:"I am a crab. Behind this tough shell is a deep, complex, and squishy interior."; color:black;font-size:18px;font-weight:bold;
 }
 .fish5>span:before{
-	content:"rawrXD"; color:black;font-size:40px;font-weight:bold;
+	content:"rawrXD"; color:black;font-size:25px;font-weight:bold;
 }
 .fish6>span:before{
-	content:"FORGIVE ME"; color:black;font-size:30px;font-weight:bold;
+	content:"FORGIVE ME"; color:black;font-size:25px;font-weight:bold;
 }
 .fish7>span:before{
 	content:"I eat my own poop."; color:black;font-size:24px;font-weight:bold;
 }
 .fish8>span:before{
-	content:"My bright colors are used to scare off predators"; color:black;font-size:24px;font-weight:bold;
+	content:"My bright colors are used to scare off predators"; color:black;font-size:18px;font-weight:bold;
 }
 .fish9>span:before{
 	content:"I prefer rocky or coral habitats"; color:black;font-size:24px;font-weight:bold;
