@@ -116,16 +116,16 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 
 .fish1>span, .fish2>span, .fish3>span, .fish4>span, .fish5>span, .fish6>span, .fish7>span{
   display:none;position:relative; z-index:2; left: 0%;bottom:-15%;  
-  background-color:white; border:solid 2px #000; width:200px; height:60px; padding:10px; border-radius:10%;
+  background-color:white; border:solid 2px #000; width:250px; height:60px; padding:10px; border-radius:10%;
 }
 
 /* Dialog */
 
 .fish1>span:before{
-   content:"I'm a trout I think!"; color:black; font-size:18px; font-weight:bold;
+   content:"I'm a trout I think!"; color:black; font-size:24px; font-weight:bold;
 }
 .fish2>span:before{
-   content:"Clown fish?"; color:black; font-size:18px; font-weight:bold;
+   content:"Clown fish?"; color:black; font-size:24px; font-weight:bold;
 }
 .fish3>span:before{
 	content:"I am an octopus! Octopuses have three hearts!"; color:black;font-size:18px;font-weight:bold;
@@ -134,13 +134,13 @@ h1, .score {margin:0; text-align:center; font-size:24px;}
 	content:"I am a crab. Behind this tough shell is a deep, complex, and squishy interior."; color:black;font-size:18px;font-weight:bold;
 }
 .fish5>span:before{
-	content:"rawrXD"; color:black;font-size:18px;font-weight:bold;
+	content:"rawrXD"; color:black;font-size:40px;font-weight:bold;
 }
 .fish6>span:before{
-	content:"Forgive me"; color:black;font-size:18px;font-weight:bold;
+	content:"FORGIVE ME"; color:black;font-size:30px;font-weight:bold;
 }
 .fish7>span:before{
-	content:"..."; color:black;font-size:18px;font-weight:bold;
+	content:"I eat my own poop."; color:black;font-size:24px;font-weight:bold;
 }
 
 /* Combined with movement pattern, use delay/transform to create randomness */
